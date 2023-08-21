@@ -37,14 +37,14 @@ struct NewsListView: View {
                                     .frame(width: 170, height: 28)
                             }
                             
-//                            ToolbarItem(placement: .navigationBarTrailing) {
-//                                NavigationLink {
-//                                    BookmarkView()
-//                                        .environmentObject(newsBookmark)
-//                                } label: {
-//                                    BookmarkButton(numberOfBookmark: newsBookmark.new.count)
-//                                }
-//                            }
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                NavigationLink {
+                                    BookmarkView()
+                                        .environmentObject(newsBookmark)
+                                } label: {
+                                    BookmarkButton(numberOfBookmark: newsBookmark.new.count)
+                                }
+                            }
                             
                         }
                         .navigationBarTitleDisplayMode(.inline)

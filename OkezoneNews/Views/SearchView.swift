@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchView: View {
     
     @StateObject private var newsVM = NewsFetch()
+    @StateObject var newsBookmark = Bookmark()
     
     @State var searchText: String = ""
     
@@ -25,9 +26,12 @@ struct SearchView: View {
                         .navigationTitle("Search")
                 }
             } else {
-                List(newsVM.searchNews) { newsItem in
-                    NavigationLink(destination: NewsDetailView(news: newsItem)) {
-                        NewsRowView(news: newsItem)
+                List(newsVM.filteredNews) { newsItem in
+                    NavigationLink(destination:
+                                NewsDetailView(news: newsItem)
+                                    .environmentObject(newsBookmark)) {
+                                NewsRowView(news: newsItem)
+                                    .environmentObject(newsBookmark)
                         
                     }
                 }

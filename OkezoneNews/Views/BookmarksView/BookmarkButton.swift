@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BookmarkButton: View {
     
+    @EnvironmentObject var newsBookmark: Bookmark
     var numberOfBookmark: Int
     
     var body: some View {
@@ -23,9 +24,11 @@ struct BookmarkButton: View {
                     .frame(width: 15, height: 15)
                     .background(Color(.red))
                     .cornerRadius(50)
-                    
-                
+            
             }
+        }
+        .refreshable {
+            newsBookmark.getBookmarks()
         }
     }
 }

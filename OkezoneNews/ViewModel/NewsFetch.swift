@@ -32,18 +32,6 @@ class NewsFetch: ObservableObject {
         }
     }
     
-    var searchNews: [News] {
-        if searchText.isEmpty {
-            return news
-        } else {
-            return news.filter { news in
-                news.title.localizedCaseInsensitiveContains(searchText) ||
-                news.categories.first!.localizedCaseInsensitiveContains(searchText)
-            }
-        }
-    }
-    
-    
     func fetchNews() async {
         DispatchQueue.main.async {
             self.isLoading = true

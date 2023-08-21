@@ -108,9 +108,6 @@ struct NewsDetailView: View {
 
                                 }
                             }
-                            .refreshable {
-                                newsBookmark.getBookmarks()
-                            }
                         }
                     }
                
@@ -118,10 +115,6 @@ struct NewsDetailView: View {
             .padding(.top, 97)
             .edgesIgnoringSafeArea(.top)
         }
-        .task {
-            newsBookmark.getBookmarks()
-        }
-        
     }
 }
 

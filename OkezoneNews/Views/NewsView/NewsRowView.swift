@@ -92,7 +92,6 @@ struct NewsRowView: View {
                     }
                 }
                 .padding(.top)
-                
             }
         }
     }
